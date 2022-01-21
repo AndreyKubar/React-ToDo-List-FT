@@ -1,25 +1,25 @@
 import React from "react";
 
 const Form = ({setInputText, todos, setTodos, inputText, setStatus}) => {
+    //ввести название задачи
     const inputTextHandler = (e) => {
-        console.log(e.target.value);
         setInputText(e.target.value)
     }
+
     const submitTodoHandler = (e) => {
         e.preventDefault();
         setTodos([
             ...todos,
             {
                 text: inputText, 
-                complete: false,
+                completed: false,
                 id: Math.random() * 1000
             }
         ])
         setInputText("");
     }
-
+    //статус задачи
     const statusHandler = (e) => {
-        console.log(e);
         setStatus(e.target.value)
     }
 
